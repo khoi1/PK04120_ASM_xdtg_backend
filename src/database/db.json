@@ -1,0 +1,363 @@
+{
+  "categories": [
+    {
+      "id": "cat-001",
+      "name": "Điện thoại & Laptop"
+    },
+    {
+      "id": "cat-002",
+      "name": "Phụ kiện công nghệ"
+    },
+    {
+      "id": "cat-003",
+      "name": "Thiết bị ngoại vi"
+    },
+    {
+      "id": "cat-004",
+      "name": "Âm thanh & Nghe nhìn"
+    }
+  ],
+  "products": [
+    {
+      "id": "SKU-001",
+      "name": "Laptop ThinkPad X1",
+      "description": "Laptop mỏng nhẹ, hiệu năng cao dành cho doanh nhân.",
+      "price": 1200,
+      "categoryId": "cat-001",
+      "stock": 0,
+      "imageUrl": "https://www.laptopvip.vn/images/ab__webp/thumbnails/715/585/detailed/39/ThinkPad-X1-Carbon-Gen-13-CT1-05-www.laptopvip.vn-1731149987.png.webp"
+    },
+    {
+      "id": "SKU-002",
+      "name": "Điện thoại Galaxy S25",
+      "description": "Điện thoại thông minh flagship với camera 108MP.",
+      "price": 999.99,
+      "categoryId": "cat-001",
+      "stock": 90,
+      "imageUrl": "https://cdn.tgdd.vn/Products/Images/42/333363/samsung-galaxy-s25-green-thumbai-600x600.jpg"
+    },
+    {
+      "id": "SKU-003",
+      "name": "Tai nghe không dây Pro",
+      "description": "Tai nghe chống ồn chủ động, âm thanh chất lượng cao.",
+      "price": 249,
+      "categoryId": "cat-004",
+      "stock": 300,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWv9tYzYl2A8e9EU1Mec9Aje82DbNnM7xn3g&s"
+    },
+    {
+      "id": "SKU-004",
+      "name": "Bàn phím cơ K8",
+      "description": "Bàn phím cơ không dây, layout 80% với switch Brown.",
+      "price": 89.5,
+      "categoryId": "cat-003",
+      "stock": 140,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaQcNeas8mgiIIRDwZ9Z_RwzvxgxFexKtcxA&s"
+    },
+    {
+      "id": "SKU-005",
+      "name": "Bàn phím cơ K400 Plus",
+      "description": "Bàn phím đến từ nhà Logitech ưu đãi đặc biệt.",
+      "price": 100,
+      "categoryId": "cat-003",
+      "stock": 150,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTRtNtWTd6qu9G47Zexd7aW2NqlS5CCHzJSA&s"
+    },
+    {
+      "id": "SKU-006",
+      "name": "Chuột Logitech MX Master 3S",
+      "description": "Chuột công thái học đỉnh cao cho dân văn phòng và code.",
+      "price": 95,
+      "categoryId": "cat-003",
+      "stock": 50,
+      "imageUrl": "https://product.hstatic.net/200000348419/product/co_gi_trong_hop_logitech_mx_master_3s_f11623a7f77d4f4b8f56c8f8ee640229_master.jpg"
+    },
+    {
+      "id": "SKU-007",
+      "name": "Màn hình LG UltraGear 27inch",
+      "description": "Màn hình Gaming 144Hz, tấm nền Nano IPS siêu nét.",
+      "price": 350,
+      "categoryId": "cat-003",
+      "stock": 20,
+      "imageUrl": "https://product.hstatic.net/200000420363/product/man-hinh-gaming-lg-27gs60f-b.atv-3_bb94d2b648d746109306193fb73950e3_master.png"
+    },
+    {
+      "id": "SKU-008",
+      "name": "iPad Pro M4 11 inch",
+      "description": "Máy tính bảng mạnh mẽ nhất với chip Apple M4 đời mới.",
+      "price": 1100,
+      "categoryId": "cat-001",
+      "stock": 15,
+      "imageUrl": "https://ttcenter.com.vn/uploads/photos/1716024373_2819_e8c11f81b95ea83e1f5a597274ae0326.webp"
+    },
+    {
+      "id": "SKU-009",
+      "name": "Loa Marshall Stanmore III",
+      "description": "Loa Bluetooth thiết kế cổ điển, chất âm huyền thoại.",
+      "price": 379,
+      "categoryId": "cat-004",
+      "stock": 25,
+      "imageUrl": "https://cdn2.fptshop.com.vn/unsafe/828x0/filters:format(webp):quality(75)/2023_12_7_638375530363392618_Loa%20Bluetooth%20Marshall%20Stanmore%20III%20Kem-2.jpg"
+    },
+    {
+      "id": "SKU-010",
+      "name": "Sạc dự phòng Anker 737",
+      "description": "Sạc dự phòng 24000mAh, công suất 140W sạc được Laptop.",
+      "price": 150,
+      "categoryId": "cat-002",
+      "stock": 200,
+      "imageUrl": "https://ngockhoamedia.com/wp-content/uploads/2023/08/pin-du-phong-anker-737-powercore-24000-140w-a1289-ngockhoamedia-02.jpeg"
+    }
+  ],
+  "users": [
+    {
+      "id": "3123",
+      "role": "admin",
+      "fullname": "Quản trị Viên a",
+      "username": "admin@gmail.com",
+      "password": "123",
+      "age": 13,
+      "gender": "male",
+      "desiredProduct": "SKU-002"
+    },
+    {
+      "id": "3130",
+      "role": "user",
+      "fullname": "Nguyễn văn A",
+      "username": "user@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "3124",
+      "fullname": "khôi",
+      "username": "nguyentannhatkhoi@gmail.com",
+      "password": "khoi123",
+      "role": "user"
+    },
+    {
+      "id": "1765214370954",
+      "fullname": "nhật khôi",
+      "username": "khointnpk04120@gmail.com",
+      "password": "khoi123",
+      "role": "user"
+    }
+  ],
+  "carts": [],
+  "orders": [
+    {
+      "id": "44670374",
+      "userId": "3123",
+      "fullname": "Quản trị viên",
+      "email": "admin@gmail.com",
+      "phone": "0989715747",
+      "address": "abc",
+      "note": "",
+      "payment": "COD",
+      "status": "completed",
+      "subtotal": 10894.9,
+      "vat": 1089,
+      "total": 11983.9,
+      "createdAt": "2025-12-09T03:37:26.703Z"
+    },
+    {
+      "id": "43021356",
+      "userId": "3123",
+      "fullname": "Quản trị viên",
+      "email": "admin@gmail.com",
+      "phone": "0989715747",
+      "address": "abc",
+      "note": "",
+      "payment": "COD",
+      "status": "completed",
+      "subtotal": 999.99,
+      "vat": 100,
+      "total": 1099.99,
+      "createdAt": "2025-12-09T03:53:50.213Z"
+    },
+    {
+      "id": "86179854",
+      "userId": "3124",
+      "fullname": "khôi",
+      "email": "nguyentannhatkhoi@gmail.com",
+      "phone": "0989715747",
+      "address": "abc",
+      "note": "",
+      "payment": "COD",
+      "status": "pending",
+      "subtotal": 20999.91,
+      "vat": 2100,
+      "total": 23099.91,
+      "createdAt": "2025-12-09T05:07:41.798Z"
+    },
+    {
+      "id": "71922836",
+      "userId": "3123",
+      "fullname": "Quản trị Viên a",
+      "email": "admin@gmail.com",
+      "phone": "0989715747",
+      "address": "abc",
+      "note": "",
+      "payment": "COD",
+      "status": "cancelled",
+      "subtotal": 6000,
+      "vat": 600,
+      "total": 6600,
+      "createdAt": "2025-12-09T06:11:59.228Z"
+    },
+    {
+      "id": "76106133",
+      "userId": "3130",
+      "fullname": "Nguyễn văn A",
+      "email": "user@gmail.com",
+      "phone": "0989715747",
+      "address": "abc",
+      "note": "",
+      "payment": "COD",
+      "status": "pending",
+      "subtotal": 9999.9,
+      "vat": 1000,
+      "total": 10999.9,
+      "createdAt": "2025-12-10T18:52:41.061Z"
+    },
+    {
+      "id": "33528965",
+      "userId": "3123",
+      "fullname": "Quản trị Viên a",
+      "email": "admin@gmail.com",
+      "phone": "0989715747",
+      "address": "abc",
+      "note": "",
+      "payment": "COD",
+      "status": "completed",
+      "subtotal": 12000,
+      "vat": 1200,
+      "total": 13200,
+      "createdAt": "2025-12-11T03:05:35.289Z"
+    },
+    {
+      "id": "69438621",
+      "userId": "3123",
+      "fullname": "Quản trị Viên a",
+      "email": "admin@gmail.com",
+      "phone": "0989715744",
+      "address": "abc",
+      "note": "",
+      "payment": "COD",
+      "status": "cancelled",
+      "subtotal": 10999.89,
+      "vat": 1100,
+      "total": 12099.89,
+      "createdAt": "2025-12-11T05:24:54.386Z"
+    }
+  ],
+  "orderItems": [
+    {
+      "orderId": "44670374",
+      "productId": "SKU-002",
+      "price": 999.99,
+      "quantity": 10,
+      "id": 1
+    },
+    {
+      "orderId": "44670374",
+      "productId": "SKU-004",
+      "price": 89.5,
+      "quantity": 10,
+      "id": 2
+    },
+    {
+      "orderId": "43021356",
+      "productId": "SKU-002",
+      "price": 999.99,
+      "quantity": 1,
+      "id": 3
+    },
+    {
+      "orderId": "86179854",
+      "productId": "SKU-002",
+      "price": 999.99,
+      "quantity": 9,
+      "id": 4
+    },
+    {
+      "orderId": "86179854",
+      "productId": "SKU-001",
+      "price": 1200,
+      "quantity": 10,
+      "id": 5
+    },
+    {
+      "orderId": "71922836",
+      "productId": "SKU-001",
+      "price": 1200,
+      "quantity": 5,
+      "id": 6
+    },
+    {
+      "orderId": "76106133",
+      "productId": "SKU-002",
+      "price": 999.99,
+      "quantity": 10,
+      "id": 7
+    },
+    {
+      "orderId": "33528965",
+      "productId": "SKU-001",
+      "price": 1200,
+      "quantity": 10,
+      "id": 8
+    },
+    {
+      "orderId": "69438621",
+      "productId": "SKU-002",
+      "price": 999.99,
+      "quantity": 11,
+      "id": 9
+    }
+  ],
+  "favorites": [
+    {
+      "userId": "3123",
+      "productId": "SKU-002",
+      "id": 1
+    }
+  ],
+  "reviews": [
+    {
+      "userId": "3123",
+      "orderId": "44670374",
+      "productId": "SKU-002",
+      "stars": 5,
+      "comment": "",
+      "createdAt": "2025-12-10T15:58:37.874Z",
+      "id": 1
+    },
+    {
+      "userId": "3123",
+      "orderId": "44670374",
+      "productId": "SKU-004",
+      "stars": 5,
+      "comment": "sản phẩm ok",
+      "createdAt": "2025-12-10T16:36:52.643Z",
+      "id": 2
+    },
+    {
+      "userId": "3123",
+      "orderId": "43021356",
+      "productId": "SKU-002",
+      "stars": 4,
+      "comment": "tạm được",
+      "createdAt": "2025-12-10T19:31:53.128Z",
+      "id": 3
+    },
+    {
+      "userId": "3123",
+      "orderId": "33528965",
+      "productId": "SKU-001",
+      "stars": 5,
+      "comment": "hang deu",
+      "createdAt": "2025-12-11T05:29:05.100Z",
+      "id": 4
+    }
+  ]
+}
