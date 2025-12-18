@@ -72,6 +72,9 @@ const handleLogout = () => {
                 <router-link class="dropdown-item" to="/admin-order">Quản lý đơn hàng</router-link>
               </li>
               <li>
+                <router-link class="dropdown-item" to="/review-manager">Quản lý đánh giá</router-link>
+              </li>
+              <li>
                 <router-link class="dropdown-item" to="/dashboard-stats">Thống kê</router-link>
               </li>
             </ul>

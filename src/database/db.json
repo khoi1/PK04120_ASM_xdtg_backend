@@ -33,7 +33,7 @@
       "description": "Điện thoại thông minh flagship với camera 108MP.",
       "price": 999.99,
       "categoryId": "cat-001",
-      "stock": 90,
+      "stock": 69,
       "imageUrl": "https://cdn.tgdd.vn/Products/Images/42/333363/samsung-galaxy-s25-green-thumbai-600x600.jpg"
     },
     {
@@ -78,7 +78,7 @@
       "description": "Màn hình Gaming 144Hz, tấm nền Nano IPS siêu nét.",
       "price": 350,
       "categoryId": "cat-003",
-      "stock": 20,
+      "stock": 19,
       "imageUrl": "https://product.hstatic.net/200000420363/product/man-hinh-gaming-lg-27gs60f-b.atv-3_bb94d2b648d746109306193fb73950e3_master.png"
     },
     {
@@ -142,7 +142,14 @@
       "role": "user"
     }
   ],
-  "carts": [],
+  "carts": [
+    {
+      "id": "1766026890325",
+      "userId": "3123",
+      "productId": "SKU-003",
+      "quantity": 10
+    }
+  ],
   "orders": [
     {
       "id": "44670374",
@@ -248,6 +255,51 @@
       "vat": 1100,
       "total": 12099.89,
       "createdAt": "2025-12-11T05:24:54.386Z"
+    },
+    {
+      "id": "22433325",
+      "userId": "3123",
+      "fullname": "Quản trị Viên a",
+      "email": "admin@gmail.com",
+      "phone": "0989715747",
+      "address": "abc123",
+      "note": "",
+      "payment": "COD",
+      "status": "pending",
+      "subtotal": 9999.9,
+      "vat": 1000,
+      "total": 10999.9,
+      "createdAt": "2025-12-18T02:17:04.333Z"
+    },
+    {
+      "id": "51343629",
+      "userId": "3130",
+      "fullname": "Nguyễn văn A",
+      "email": "user@gmail.com",
+      "phone": "0989715747",
+      "address": "abc",
+      "note": "",
+      "payment": "COD",
+      "status": "pending",
+      "subtotal": 10999.89,
+      "vat": 1100,
+      "total": 12099.89,
+      "createdAt": "2025-12-18T02:21:53.436Z"
+    },
+    {
+      "id": "72177772",
+      "userId": "3123",
+      "fullname": "Quản trị Viên a",
+      "email": "admin@gmail.com",
+      "phone": "0989715747",
+      "address": "ábc",
+      "note": "",
+      "payment": "COD",
+      "status": "pending",
+      "subtotal": 350,
+      "vat": 35,
+      "total": 385,
+      "createdAt": "2025-12-18T02:58:41.777Z"
     }
   ],
   "orderItems": [
@@ -313,13 +365,39 @@
       "price": 999.99,
       "quantity": 11,
       "id": 9
+    },
+    {
+      "orderId": "22433325",
+      "productId": "SKU-002",
+      "price": 999.99,
+      "quantity": 10,
+      "id": 10
+    },
+    {
+      "orderId": "51343629",
+      "productId": "SKU-002",
+      "price": 999.99,
+      "quantity": 11,
+      "id": 11
+    },
+    {
+      "orderId": "72177772",
+      "productId": "SKU-007",
+      "price": 350,
+      "quantity": 1,
+      "id": 12
     }
   ],
   "favorites": [
     {
-      "userId": "3123",
+      "userId": "3130",
       "productId": "SKU-002",
-      "id": 1
+      "id": 2
+    },
+    {
+      "userId": "3123",
+      "productId": "SKU-003",
+      "id": 3
     }
   ],
   "reviews": [
@@ -348,7 +426,8 @@
       "stars": 4,
       "comment": "tạm được",
       "createdAt": "2025-12-10T19:31:53.128Z",
-      "id": 3
+      "id": 3,
+      "isHidden": true
     },
     {
       "userId": "3123",
@@ -357,7 +436,8 @@
       "stars": 5,
       "comment": "hang deu",
       "createdAt": "2025-12-11T05:29:05.100Z",
-      "id": 4
+      "id": 4,
+      "isHidden": true
     }
   ]
 }

@@ -17,6 +17,7 @@ import AdminOrders from "../page/AdminPage/AdminOrders.vue";
 import OrderHistory from "../page/OrderHistory.vue";
 import DashboardStats from "../page/AdminPage/DashboardStats.vue";
 import FavoritesPage from "../page/FavoritesPage.vue";
+import ReviewManager from "../page/AdminPage/ReviewManager.vue";
 
 const routes = [
     { path: '/', name: 'index', component: Index },
@@ -30,6 +31,7 @@ const routes = [
     { path: '/user', name: 'user', component: Users, meta: { requiresAuth: true, isAdmin: true } },
     { path: '/admin-order', name: 'admin-order', component: AdminOrders, meta: { requiresAuth: true, isAdmin: true } },
     { path: '/dashboard-stats', name: 'dashboard-stats', component: DashboardStats, meta: { requiresAuth: true, isAdmin: true } },
+    { path: '/review-manager', name: 'review-manager', component: ReviewManager, meta: { requiresAuth: true, isAdmin: true } },
 
     // USER PAGE
     { path: '/profile', name: 'profile', component: Profile, meta: { requiresAuth: true } },

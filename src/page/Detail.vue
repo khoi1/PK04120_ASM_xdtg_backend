@@ -10,6 +10,7 @@ const product = ref(null)
 const related = ref([]);
 const reviews = ref([]);
 const qty = ref(1)
+const activeTab = ref('reviews')
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 const api = axios.create({
@@ -46,7 +47,7 @@ const loadDetail = async () => {
 
 const loadReviews = async () => {
     const res = await api.get(`/reviews?productId=${product.value.id}&_sort=createdAt&_order=desc&_expand=user`);
-    reviews.value = res.data;
+    reviews.value = res.data.filter(r => !r.isHidden);
 };
 
 const loadRelated = async () => {
@@ -117,6 +118,10 @@ watchEffect(() => {
         window.scrollTo(0, 0);
     }
 });
+
+const switchTab = (tabName) => {
+    activeTab.value = tabName
+}
 </script>
 
 <template>
@@ -163,85 +168,84 @@ watchEffect(() => {
             </div>
         </div>
         <div class="mt-5">
-            <h4 class="mb-4 border-bottom pb-2">Đánh giá từ khách hàng</h4>
+            <ul class="nav nav-tabs mb-4">
+                <li class="nav-item">
+                    <a class="nav-link" :class="{ active: activeTab === 'reviews', 'fw-bold': activeTab === 'reviews' }"
+                        href="#" @click.prevent="switchTab('reviews')"> Đánh giá khách hàng
+                    </a>
+                </li>
 
-            <div v-if="reviews.length === 0" class="alert alert-light text-center">
-                Chưa có đánh giá nào. Hãy là người đầu tiên mua và review nhé! 😎
-            </div>
+                <li class="nav-item">
+                    <a class="nav-link" :class="{ active: activeTab === 'related', 'fw-bold': activeTab === 'related' }"
+                        href="#" @click.prevent="switchTab('related')"> Sản phẩm liên quan
+                    </a>
+                </li>
+            </ul>
 
-            <div v-else class="row">
-                <div class="col-md-8">
-                    <div v-for="rev in reviews" :key="rev.id" class="card mb-3 border-0 shadow-sm">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                    <h6 class="fw-bold mb-1">
-                                        {{ rev.user?.fullname }}
-                                    </h6>
+            <div v-if="activeTab === 'reviews'">
+                <div v-if="reviews.length === 0" class="alert alert-light text-center">
+                    Chưa có đánh giá nào. Hãy là người đầu tiên mua và review nhé!
+                </div>
 
-                                    <div class="text-warning small mb-2">
-                                        <span v-for="n in 5" :key="n">
-                                            <i v-if="n <= rev.stars" class="bi bi-star-fill"></i>
-                                            <i v-else class="bi bi-star text-secondary opacity-25"></i>
-                                        </span>
+                <div v-else class="row">
+                    <div class="col-md-8">
+                        <div v-for="rev in reviews" :key="rev.id" class="card mb-3 border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h6 class="fw-bold mb-1">{{ rev.user?.fullname }}</h6>
+                                        <div class="text-warning small mb-2">
+                                            <span v-for="n in 5" :key="n">
+                                                <i v-if="n <= rev.stars" class="bi bi-star-fill"></i>
+                                                <i v-else class="bi bi-star text-secondary opacity-25"></i>
+                                            </span>
+                                        </div>
                                     </div>
+                                    <small class="text-muted">
+                                        {{ new Date(rev.createdAt).toLocaleDateString() }}
+                                    </small>
                                 </div>
-                                <small class="text-muted">
-                                    {{ new Date(rev.createdAt).toLocaleDateString() }}
-                                </small>
+                                <p class="card-text bg-light p-2 rounded">
+                                    {{ rev.comment }}
+                                </p>
                             </div>
-
-                            <p class="card-text bg-light p-2 rounded">
-                                {{ rev.comment }}
-                            </p>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-4">
-                    <div class="card bg-light border-0 p-3 text-center sticky-top" style="top: 20px; z-index: 1;">
-                        <h1 class="display-4 fw-bold text-warning mb-0">{{ averageRating }}</h1>
-
-                        <div class="mb-2 fs-4">
-                            <span v-for="n in 5" :key="n" class="mx-1">
-
-                                <i v-if="n <= Math.floor(Number(averageRating))" class="bi bi-star-fill text-warning">
-                                </i>
-
-                                <i v-else-if="n === Math.ceil(Number(averageRating)) && Number(averageRating) % 1 !== 0"
-                                    class="bi bi-star-half text-warning">
-                                </i>
-
-                                <i v-else class="bi bi-star text-secondary opacity-50">
-                                </i>
-
-                            </span>
+                    <div class="col-md-4">
+                        <div class="card bg-light border-0 p-3 text-center sticky-top" style="top: 20px;">
+                            <h1 class="display-4 fw-bold text-warning mb-0">{{ averageRating }}</h1>
+                            <div class="mb-2 fs-4">
+                                <span v-for="n in 5" :key="n" class="mx-1">
+                                    <i v-if="n <= Math.floor(Number(averageRating))"
+                                        class="bi bi-star-fill text-warning"></i>
+                                    <i v-else-if="n === Math.ceil(Number(averageRating)) && Number(averageRating) % 1 !== 0"
+                                        class="bi bi-star-half text-warning"></i>
+                                    <i v-else class="bi bi-star text-secondary opacity-50"></i>
+                                </span>
+                            </div>
+                            <p class="text-muted">Dựa trên {{ reviews.length }} đánh giá</p>
                         </div>
-
-                        <p class="text-muted">Dựa trên {{ reviews.length }} đánh giá</p>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="mt-5" v-if="related.length > 0">
-            <h2 class="my-4">Sản phẩm liên quan</h2>
-
-            <div class="row">
-                <div class="col-md-4" v-for="item in related" :key="item.id">
-                    <div class="card shadow-sm mb-3">
-                        <img :src="item.imageUrl" class="card-img-top img-product">
-
-                        <div class="card-body">
-                            <h5 class="card-title">{{ item.name }}</h5>
-                            <p class="text-muted small text-truncate">{{ item.description }}</p>
-                            <hr>
-                            <p class="text-danger fw-bold">{{ item.price }} USD</p>
-
-                            <router-link class="btn btn-outline-danger w-100 btn-sm rounded-pill"
-                                :to="`/product/${item.id}`">
-                                Xem chi tiết
-                            </router-link>
+            <div v-if="activeTab === 'related'">
+                <div v-if="related.length === 0" class="text-center text-muted py-5">
+                    <p>Không có sản phẩm liên quan nào</p>
+                </div>
+                <div v-else class="row">
+                    <div class="col-md-3" v-for="item in related" :key="item.id">
+                        <div class="card shadow-sm mb-3 h-100">
+                            <img :src="item.imageUrl" class="card-img-top img-product">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-truncate">{{ item.name }}</h5>
+                                <p class="text-danger fw-bold mb-2">{{ item.price }} USD</p>
+                                <router-link class="btn btn-outline-danger w-100 btn-sm rounded-pill mt-auto"
+                                    :to="`/product/${item.id}`">
+                                    Xem chi tiết
+                                </router-link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -254,6 +258,5 @@ watchEffect(() => {
 .img-product {
     height: 250px;
     object-fit: contain;
-    transition: transform 0.3s ease;
 }
 </style>

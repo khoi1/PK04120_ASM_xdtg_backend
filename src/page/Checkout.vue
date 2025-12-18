@@ -138,7 +138,6 @@ const placeOrder = async () => {
     for (const item of share.carts) {
       const productId = item.product.id;
 
-      // Lấy sản phẩm hiện tại
       const res = await api.get(`/products/${productId}`);
       const currentProduct = res.data;
 
@@ -190,7 +189,7 @@ const placeOrder = async () => {
               </div>
               <div class="col-md-6">
                 <label class="form-label">Số điện thoại</label>
-                <input v-model="checkoutForm.phone" type="tel" class="form-control" placeholder="09.." />
+                <input v-model="checkoutForm.phone" type="tel" class="form-control" placeholder="0989..." />
                 <p v-if="errors.phone" class="text-danger small">{{ errors.phone }}</p>
               </div>
             </div>
@@ -232,7 +231,7 @@ const placeOrder = async () => {
                   <small class="text-muted">Thanh toán khi nhận hàng</small>
                 </div>
               </div>
-              <div class="col-md-4">
+              <!-- <div class="col-md-4">
                 <div class="form-check border rounded-3 p-3 h-100">
                   <input class="form-check-input" type="radio" name="paymentMethod" id="momo" />
                   <label class="form-check-label d-block" for="momo">
@@ -249,13 +248,13 @@ const placeOrder = async () => {
                   </label>
                   <small class="text-muted">Hỗ trợ chuyển khoản qua VNPay QR.</small>
                 </div>
-              </div>
+              </div> -->
             </div>
 
-            <div class="alert alert-info mt-3" role="alert">
+            <!-- <div class="alert alert-info mt-3" role="alert">
               Sau khi bấm "Đặt hàng", mã QR tương ứng sẽ hiển thị để bạn quét bằng ví điện tử. Giao dịch an toàn, xác
               nhận trong vòng 1 phút.
-            </div>
+            </div> -->
 
             <div class="row g-3 mt-1">
               <div class="col-12 mt-2">
